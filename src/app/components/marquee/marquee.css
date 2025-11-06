@@ -1,0 +1,44 @@
+._tools_img {
+    width: 4em;
+    height: 4em;
+    margin-left: 2em;
+    margin-right: 2em;
+    opacity: 0.7;
+    padding: 0.5em;
+    transition: 0.12s;
+}
+
+._tools_img:hover {
+  opacity: 1;
+  transform: scale(1.15);
+  transition: 0.2s;
+}
+
+._marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+#_marquee_inner {
+  display: flex;
+  animation: scroll 25s linear infinite;
+}
+
+._marquee_inner img {
+  height: 60px;
+  margin: 0 30px;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
