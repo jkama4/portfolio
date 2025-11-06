@@ -5,7 +5,7 @@ import { ProjectsCards } from '../../components/projects-cards/projects-cards';
 
 @Component({
   selector: 'app-experience',
-  imports: [ExperienceCards, EducationCards, ProjectsCards],
+  imports: [ExperienceCards, EducationCards],
   templateUrl: './experience.html',
   styleUrl: './experience.css',
 })
