@@ -1,15 +1,21 @@
-._section {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+.now {
+  font-size: 0.9rem;
 }
 
-._section h3 {
-    color: rgb(106, 106, 106);
-    margin-bottom: 0px;
+.tools {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
+  gap: 0.75em 1.5em;
+  margin: 0;
+  font-size: 0.85rem;
 }
 
-._section p {
-    color: rgb(106, 106, 106);
-    margin-top: 0px;
+.tools dt {
+  font-weight: bold;
+  color: var(--text-strong);
+}
+
+.tools dd {
+  margin: 0.15em 0 0;
+  line-height: 1.45;
 }
