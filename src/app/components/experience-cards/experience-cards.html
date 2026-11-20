@@ -1,29 +1,36 @@
-<div class="_exp_cards_section">
-    <div id="_exp_card">
-        <img class="_brand_img" src="/assets/images/kompas_logo.png" alt="Kompas Image">
-        <h3>
-            Kompas Network 
-            <a href="https://www.kompaspublishing.nl/" target="_blank">
-                <img id="_external_link_kompas" src="/assets/images/external-link-svgrepo-com.svg" alt="API Image">
-            </a>
-        </h3>
-        <h4>
-            Jan 2024 - Present
-        </h4>
-        <p>
-            • <strong>Contextual tagging</strong> API service
-            which classifies articles with multiple topics. The classification
-            is done through vector search, in which topics are chosen
-            based on vector distance to an article's text (semantically). 
-            The data is stored in a PostgreSQL database, and a task queue
-            runs on the background to ensure the database remains up-to-date 
-            with Kompas' most recent articles.
-        </p>
-
-    </div>
-    <div id="_exp_img_card">
-        <img class="_exp_img" src="/assets/images/api-settings-svgrepo-com.svg" alt="API Image">
-        <img class="_exp_img" src="/assets/images/database-svgrepo-com.svg" alt="Database Image">
-
-    </div>
-</div>
+<ul class="card-list">
+  @for (job of jobs; track job.company) {
+    <li class="card">
+      <div class="card-head">
+        @if (job.logo) {
+          <img class="card-logo" [src]="job.logo" [alt]="job.company + ' logo'" />
+        }
+        <div>
+          <h3>
+            {{ job.role }}
+          </h3>
+          <p class="sub">
+            {{ job.company }}
+            @if (job.url) {
+              <a class="ext-link" [href]="job.url" target="_blank" rel="noopener" [attr.aria-label]="job.company + ' website'">
+                <img src="/assets/images/external-link-svgrepo-com.svg" alt="" />
+              </a>
+            }
+            @if (job.team) {
+              · {{ job.team }}
+            }
+          </p>
+          <p class="meta">{{ job.period }}</p>
+        </div>
+      </div>
+      @for (paragraph of job.paragraphs; track $index) {
+        <p>{{ paragraph }}</p>
+      }
+      <ul class="tags">
+        @for (tag of job.tags; track tag) {
+          <li>{{ tag }}</li>
+        }
+      </ul>
+    </li>
+  }
+</ul>

@@ -1,69 +1,47 @@
-._card_section {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    color: #6d6969;
+/* Two rows: wide/narrow, then narrow/wide (as in the original design). */
+.row {
+  display: grid;
+  gap: 1.5em;
+  margin: 0.5em 0 1.5em;
 }
 
-._card_section p, h3 {
-    font-family: "helvetica";
+.wide-first {
+  grid-template-columns: 5fr 3fr;
 }
 
-#_card_large {
-    display: flex;
-    width: 50%;
-    flex-direction: column;
-    background-color: #e5edf4;
-    border-radius: 22px;
-    padding: 1.2em;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+.narrow-first {
+  grid-template-columns: 3fr 5fr;
 }
 
-#_card_small {
-    display: flex;
-    width: 20%;
-    flex-direction: column;
-    background-color: #e5edf4;
-    border-radius: 22px;
-    padding: 1.2em;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+.interests-img {
+  display: block;
+  width: 4em;
+  height: 4em;
+  margin: 0 auto 1em;
 }
 
-#_card_large:hover {
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
-    transition: 0.15s;
-    transform: translateY(-0.3em) translateX(0.2em);
+.card p {
+  font-size: 0.95rem;
+  margin-top: 0.25em;
 }
 
-#_card_small:hover {
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
-    transition: 0.15s;
-    transform: translateY(-0.3em) translateX(0.2em);
+/* Portrait tablets and phones: equal columns. */
+@media (max-width: 700px) {
+  .row {
+    gap: 1em;
+    margin-bottom: 1em;
+  }
+
+  .wide-first,
+  .narrow-first {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-#_card_large h3 {
-    margin-top: 1em;
-    margin-bottom: 0px;
-}
-
-#_card_large p {
-    margin-top: 0px;
-}
-
-#_card_small h3 {
-    margin-top: 1em;
-    margin-bottom: 0px;
-}
-
-#_card_small p {
-    margin-top: 0px;
-}
-
-._interests_img {
-    display: block;
-    width: 4em;
-    height: 4em;
-    margin-left: auto;
-    margin-right: auto;
+/* Very narrow phones: one card per row. */
+@media (max-width: 400px) {
+  .wide-first,
+  .narrow-first {
+    grid-template-columns: 1fr;
+  }
 }

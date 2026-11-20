@@ -1,23 +1,17 @@
-<div class="_navbar">
-  <nav class="_nav_pill">
-    <a routerLink="/">Home</a>
-    <a routerLink="/experience">Experience</a>
-  </nav>
-  <div class="_socials">
-    <div id="_social_reference">
-      <a href="https://github.com/jkama4" target="_blank">
-        <img class="_social_img" src="/assets/images/github-svgrepo-com.svg" alt="GitHub Image">
-      </a>
-    </div>
-    <div id="_social_reference">
-      <a href="https://www.linkedin.com/in/jayden-k-b29174214/" target="_blank">
-        <img class="_social_img" src="/assets/images/linkedin-svgrepo-com.svg" alt="LinkedIn Image">
-      </a>
-    </div>
-    <div id="_social_reference">
-      <a href="mailto:jaydenkashanimaleki@gmail.com" target="_blank">
-        <img class="_social_img" src="/assets/images/mail-svgrepo-com.svg" alt="Mail Image">
-      </a>
-    </div>
+<header class="navbar">
+  <nav class="nav-pill" aria-label="Main">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="/experience" routerLinkActive="active">Experience</a>
+    <a routerLink="/education" routerLinkActive="active">Education</a>  </nav>
+  <div class="socials">
+    <a href="https://github.com/jkama4" target="_blank" rel="noopener" aria-label="GitHub">
+      <img class="social-img" src="/assets/images/github-svgrepo-com.svg" alt="GitHub" />
+    </a>
+    <a href="https://www.linkedin.com/in/jayden-k-b29174214/" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <img class="social-img" src="/assets/images/linkedin-svgrepo-com.svg" alt="LinkedIn" />
+    </a>
+    <a href="mailto:jaydenkashanimaleki@gmail.com" aria-label="Email">
+      <img class="social-img" src="/assets/images/mail-svgrepo-com.svg" alt="Email" />
+    </a>
   </div>
-</div>
+</header>

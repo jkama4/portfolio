@@ -1,30 +1,39 @@
-<div class="_edu_cards_section">
-    <div class="_edu_card">
-        <h3>
-            BSc Artificial Intelligence, Vrije Universiteit Amsterdam
-            <a href="https://vu.nl/en/education/bachelor/artificial-intelligence" target="_blank">
-                <img id="_external_link_edu" src="/assets/images/external-link-svgrepo-com.svg" alt="API Image">
+<ul class="card-list">
+  @for (study of studies; track study.degree) {
+    <li class="card">
+      <div class="card-head">
+        @if (study.logo) {
+          <img class="card-logo" [src]="study.logo" [alt]="study.school + ' logo'" />
+        }
+        <div>
+          <h3>
+            {{ study.degree }}
+            @if (study.url) {
+              <a class="ext-link" [href]="study.url" target="_blank" rel="noopener" [attr.aria-label]="study.degree + ' programme page'">
+                <img src="/assets/images/external-link-svgrepo-com.svg" alt="" />
+              </a>
+            }
+          </h3>
+          <p class="sub">
+            {{ study.school }}
+            @if (study.department) {
+              · {{ study.department }}
+            }
+          </p>
+          <p class="meta">
+            {{ study.period }}
+            @if (study.note) {
+              <span class="note">({{ study.note }})</span>
+            }
+          </p>
+          @if (study.link) {
+            <a class="pill-link" [href]="study.link.href" target="_blank" rel="noopener">
+              {{ study.link.label }}
+              <img src="/assets/images/external-link-svgrepo-com.svg" alt="" />
             </a>
-        </h3>
-        <h4>
-            Sep 2023 - Jul 2026
-        </h4>
-        <p>
-            Machine Learning || Data || Probability || Statistics || 
-            Linear Algebra || Calculus || Data Structures || Algorithms || 
-            Logic || Set Theory || Programming || Reinforcement Learning || 
-            Robotics
-        </p>
-    </div>
-    <div class="_edu_card">
-        <h3>
-            BSc Applied Mathematics, Technische Universiteit Delft (Not Completed)
-            <a href="https://www.tudelft.nl/en/onderwijs/opleidingen/bachelors/tw/bachelor-of-applied-mathematics" target="_blank">
-                <img id="_external_link_edu" src="/assets/images/external-link-svgrepo-com.svg" alt="API Image">
-            </a>
-        </h3>
-        <h4>
-            Sep 2022 - Feb 2023
-        </h4>
-    </div>
-</div>
+          }
+        </div>
+      </div>
+    </li>
+  }
+</ul>
